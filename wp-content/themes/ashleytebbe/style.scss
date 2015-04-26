@@ -521,10 +521,37 @@ html[xmlns] .clearfix {
     display: block;
     height: 40px;
     width: 40px;
-  }
+}
 
-  ul {
+.site-main {
+  .container {
+    margin-bottom: 30px;
+  }
+}
+
+ #site-navigation ul {
     display: none;
+    width: 100%;
+    list-style-type: none;
+    text-transform: uppercase;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    padding: 0;
+
+    li {
+      background: url('images/mobile-nav-background.png');
+
+      a {
+        color: #fff;
+        height: 60px;
+        width: 100%;
+        line-height: 50px;
+        font-weight: 300;
+        font-size: 2em;
+      }
+    }
   }
 
 .header {
@@ -601,8 +628,10 @@ html[xmlns] .clearfix {
     clear: none;
     margin-right: 10px;
 
-    &:nth-child(odd) {
-      margin-right: 0;
+    .thumbnail {
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -701,16 +730,41 @@ html[xmlns] .clearfix {
   }
 }
 
-  .single-portfolio .piece-header, .single-portfolio .featured, .type-portfolio .featured {
-    float: none;
-    margin: 0 auto;
-    display: block;
+.single-portfolio .piece-header, .single-portfolio .featured, .type-portfolio .featured {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
+.single-portfolio .featured {
+  margin: 10px 0;
+  display: block;
   }
 
-  .single-portfolio .featured {
-    margin: 10px 0;
+#contactme {
+  .right {
     display: block;
+    float: right;
   }
+}
+
+@media screen and (min-width: 555px) {
+
+  #contactme {
+  .left {
+    float: left;
+    width: 58%;
+  }
+
+  .right {
+    float: right;
+    height: auto;
+    width: 40%;
+    margin-top: 20px;
+  }
+}
+
+}
 
 
 @media screen and (min-width: 850px) {
@@ -726,7 +780,7 @@ html[xmlns] .clearfix {
       position: relative;
       z-index: 0;
 
-      &.container {
+      .container {
         padding: 0;
       }
 
@@ -736,13 +790,21 @@ html[xmlns] .clearfix {
     }
 
     nav#site-navigation {
+      display: block;
       float: right;
-      width: 70%;
+      width: 60%;
+
+      ul {
+        background-color: transparent;
+        position: static;
+      }
     }
+
       .logo {
         display: block;
         float: left;
       }
+
       .menu-menu-1-container {
         ul {
           display: block;
@@ -751,14 +813,15 @@ html[xmlns] .clearfix {
           text-transform: lowercase;
 
           li {
-            display: block;
-            float: left;
+            display: inline-block;
             margin: 0 6%;
+            background: none;
 
             a {
               color: $font;
+              font-size: .8em;
               letter-spacing: 2px;
-              padding: 5px 30px;
+              padding: 5px 20px;
               border-bottom: 1px solid $font;
 
                 &:hover {
@@ -772,37 +835,84 @@ html[xmlns] .clearfix {
     }
   }
 
+  .site-main {
+  .container {
+    margin-bottom: 80px;
+  }
+}
+
   .piece-header {
     float: left;
     clear: none;
-    margin-right: 10px;
+    margin-right: 20px;
 
     &:nth-child(odd) {
-      margin-right: 10px;
+      margin-right: 20px;
     }
-}
-.type-portfolio {
-  .piece-header {
-    width: 41%;
-    float: left;
-}
 
-  .featured {
-    float: right;
-    width: 55%;
-    height: auto;
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+  }
+  .type-portfolio {
+    .piece-header {
+      width: 41%;
+      float: left;
+  }
+
+    .featured {
+      float: right;
+      width: 55%;
+      height: auto;
+    }
+  }
+
+    .page-title {
+      font-size: 10em;
+      margin-top: -76px;
+    }
+
+    .thumbnail {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+    }
+   #contactme {
+    .left {
+      float: left;
+      width: 60%;
+    }
+
+    .right {
+      float: right;
+      height: 295px;
+      display: block;
+      margin-top: 40px;
+    }
   }
 }
 
-  .page-title {
-    font-size: 10em;
-    margin-top: -76px;
-  }
+ 
 
+@media screen and (min-width: 850px)and (max-width: 1080px) {
   .thumbnail {
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
+    width: 275px;
+    height: 275px;
+  }
+
+  #contactme {
+    .left {
+      float: left;
+      width: 58%;
+    }
+    .right {
+      height: 250px;
+      float: right;
+      width: 40%;
+      width: auto;
+      float: none;
+      margin-top: 80px;
+    }
   }
 }
 
