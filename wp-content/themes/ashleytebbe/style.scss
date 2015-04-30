@@ -583,6 +583,10 @@ html[xmlns] .clearfix {
   }
 }
 
+#blog .page-title {
+  text-align: right;
+}
+
 /*Contact Page*/
 
 #contactme {
@@ -626,22 +630,17 @@ html[xmlns] .clearfix {
   .piece-header {
     float: left;
     clear: none;
-    margin-right: 10px;
+    width: 48%;
+    margin: 0 3% 20px 0;
 
-    .thumbnail {
-      &:nth-child(odd) {
+    &:nth-child(odd) {
         margin-right: 0;
       }
-    }
   }
 }
 
 .thumbnail {
     display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    float: left;
     text-align: center;
     margin-bottom: 10px;
     filter: gray; /* IE6-9 */
@@ -673,16 +672,15 @@ html[xmlns] .clearfix {
 }
 
 .single-portfolio {
-  .piece-header {
-    width: 41%;
-    float: left;
-
-}
-
   .featured {
-    float: right;
-    width: 55%;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .portfolio-asset {
     height: auto;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -692,7 +690,7 @@ html[xmlns] .clearfix {
   a {
     display: block;
     height: 31px;
-    width: 31px;
+    width: 32px;
     background-image: url('images/social-sprite-light.png');
     float: left;
     margin-right: 30px;
@@ -730,16 +728,11 @@ html[xmlns] .clearfix {
   }
 }
 
-.single-portfolio .piece-header, .single-portfolio .featured, .type-portfolio .featured {
+.single-portfolio .piece-header {
   float: none;
   margin: 0 auto;
   display: block;
 }
-
-.single-portfolio .featured {
-  margin: 10px 0;
-  display: block;
-  }
 
 #contactme {
   .right {
@@ -749,21 +742,18 @@ html[xmlns] .clearfix {
 }
 
 @media screen and (min-width: 555px) {
+    #contactme {
+    .left {
+      float: left;
+      width: 58%;
+    }
 
-  #contactme {
-  .left {
-    float: left;
-    width: 58%;
+    .right {
+      float: right;
+      height: auto;
+      width: 40%;
+    }
   }
-
-  .right {
-    float: right;
-    height: auto;
-    width: 40%;
-    margin-top: 20px;
-  }
-}
-
 }
 
 
@@ -784,21 +774,35 @@ html[xmlns] .clearfix {
         padding: 0;
       }
 
-      .mobile-nav {
-        display: none;
+        .mobile-nav {
+          display: none;
+        }
       }
-    }
 
-    nav#site-navigation {
-      display: block;
-      float: right;
-      width: 60%;
+      nav#site-navigation {
+        display: block;
+        float: right;
+        width: 60%;
 
-      ul {
-        background-color: transparent;
-        position: static;
+        ul {
+          background-color: transparent;
+          position: static;
+        }
       }
-    }
+
+      .social-icons {
+        a {
+          display: block;
+          height: 31px;
+          width: 32px;
+          background-image: url('images/social-sprite-light.png');
+          float: left;
+          margin-right: 30px;
+
+          &.instagram { background-position: 85px 0; }
+          &.pinterest { background-position: 31px 0; margin-right: 0;}
+        }
+      }
 
       .logo {
         display: block;
@@ -836,24 +840,32 @@ html[xmlns] .clearfix {
   }
 
   .site-main {
-  .container {
-    margin-bottom: 80px;
+      .container {
+        margin-bottom: 80px;
+      }
   }
-}
 
-  .piece-header {
+  .featured {
+    float: right;
+    width: 55%;
+    height: auto;
+  }
+
+  #work .piece-header {
     float: left;
     clear: none;
-    margin-right: 20px;
+    margin-right: 3%;
+    width: 30%;
 
     &:nth-child(odd) {
-      margin-right: 20px;
+      margin-right: 3%;
     }
 
-    &:nth-child(3n+3) {
+    &:nth-child(3n+4) {
       margin-right: 0;
     }
   }
+
   .type-portfolio {
     .piece-header {
       width: 41%;
@@ -867,15 +879,26 @@ html[xmlns] .clearfix {
     }
   }
 
+  .single-portfolio {
+    .portfolio-asset {
+        width: 49%;
+        float: right;
+        margin: 10px 0;
+
+        &:nth-child(odd) {
+          float: left;
+        }
+    }
+  }
+
     .page-title {
       font-size: 10em;
       margin-top: -76px;
     }
 
     .thumbnail {
-      width: 300px;
-      height: 300px;
-      border: 1px solid black;
+      width: 100%;
+      height: auto;
     }
    #contactme {
     .left {
@@ -885,20 +908,29 @@ html[xmlns] .clearfix {
 
     .right {
       float: right;
-      height: 295px;
       display: block;
-      margin-top: 40px;
     }
   }
 }
 
- 
+.block {
+  // height: 540px;
 
-@media screen and (min-width: 850px)and (max-width: 1080px) {
-  .thumbnail {
-    width: 275px;
-    height: 275px;
+  .centered {
+    display: inline-block;
+    vertical-align: middle;
   }
+}
+
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+@media screen and (min-width: 850px) and (max-width: 1080px) {
 
   #contactme {
     .left {
@@ -906,15 +938,11 @@ html[xmlns] .clearfix {
       width: 58%;
     }
     .right {
-      height: 250px;
       float: right;
       width: 40%;
       width: auto;
       float: none;
-      margin-top: 80px;
     }
   }
 }
-
-
 

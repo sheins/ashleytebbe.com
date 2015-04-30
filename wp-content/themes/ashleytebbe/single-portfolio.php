@@ -27,6 +27,14 @@ get_header(); ?>
 			    <?php the_post_thumbnail('large', array('class'=>'featured')) ?>
 
 			    <footer class="entry-footer">
+			    <?php for ($i = 1; $i < 11; $i++) {
+			    	$image = get_field('image_' . $i);
+			    	if ($image) { ?> 
+			    		<img src="<?php echo $image['url']; ?>" class="portfolio-asset">
+			    <?php } ?>
+			   <?php  } ?>
+			    
+				
 			    </footer><!-- .entry-footer -->
 			</article><!-- #post-## -->
 			<?php endwhile; endif; ?>

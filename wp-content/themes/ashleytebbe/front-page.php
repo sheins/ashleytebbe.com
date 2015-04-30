@@ -16,12 +16,15 @@ get_header(); ?>
 			if ($query1->have_posts()) : while($query1->have_posts()) : $query1->the_post();?>
 			<div class="container clearfix">
 		      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			    <header class="piece-header">
-			        <?php the_title( '<h3 class="piece-title">', '</h3>' ); ?>
-			        <h5 class="piece-subtitle"><?php the_field('portfolio_piece_type')?></h5>
-			        <?php the_content(); ?>
-			    </header><!-- .entry-header -->
-			    <?php the_post_thumbnail('large', array('class'=>'featured')) ?>
+				    <header class="piece-header block">
+					    <div class="centered">
+					        <?php the_title( '<h3 class="piece-title">', '</h3>' ); ?>
+					        <h5 class="piece-subtitle"><?php the_field('portfolio_piece_type')?></h5>
+					        <?php the_content(); ?>
+				        </div>
+				    </header><!-- .entry-header -->
+				  
+				    
 			   </article>
 			  </div>
 		    <?php endwhile; endif ?>

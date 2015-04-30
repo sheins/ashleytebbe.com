@@ -24,9 +24,9 @@
         <div class="header">
             <div class="container clearfix">
                 <div class="social-icons" id="social-icons">
-                    <a href="https://twitter.com/ashleytebbe" class="twitter"></a>
-                    <a href="https://instagram.com/atebbe/" class="instagram"></a>
-                    <a href="https://www.pinterest.com/ashleyjeantebbe/" class="pinterest"></a>
+                    <a href="https://twitter.com/ashleytebbe" target="_blank" class="twitter"></a>
+                    <a href="https://instagram.com/atebbe/" target="_blank" class="instagram"></a>
+                    <a href="https://www.pinterest.com/ashleyjeantebbe/" target="_blank" class="pinterest"></a>
                 </div>
                 <a href="#" id="mobile-nav" class="mobile-nav"><img src="<?php bloginfo('template_url'); ?>/images/menu-white.png"></a>
         		<nav id="site-navigation" class="main-navigation" role="navigation">

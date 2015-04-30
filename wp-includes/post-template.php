@@ -381,7 +381,7 @@ function has_excerpt( $id = 0 ) {
  */
 function post_class( $class = '', $post_id = null ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_post_class( $class, $post_id ) ) . '"';
+	echo 'class="' . join( ' ', get_post_class( $class, $post_id ) ) . ' clearfix"';
 }
 
 /**

@@ -10,16 +10,16 @@ global $post;
 
 <article id="<?php echo $post->post_name; ?>" <?php post_class(); ?>>
     <div class="container clearfix">
+        <h1 class="page-title"><?php the_title(); ?></h1>
         <div class="left">
-            <h1 class="page-title"><?php the_title(); ?></h1>
-                <h3 class="piece-title"><?php the_field('name')?></h3>
-                <h5 class="piece-subtitle"><?php the_field('contact_info_description')?></h5>
+            <h3 class="piece-title"><?php the_field('name')?></h3>
+            <h5 class="piece-subtitle"><?php the_field('contact_info_description')?></h5>
             <div class="entry-content">
                 <?php the_content(); ?>
                 <div class="social-icons">
-                    <a href="" class="twitter"></a>
-                    <a href="" class="instagram"></a>
-                    <a href="" class="pinterest"></a>
+                    <a href="https://twitter.com/ashleytebbe" target="_blank" class="twitter"></a>
+                    <a href="https://instagram.com/atebbe/" target="_blank" class="instagram"></a>
+                    <a href="https://www.pinterest.com/ashleyjeantebbe/" target="_blank" class="pinterest"></a>
                 </div>
         	</div><!-- .entry-content -->
         </div>
