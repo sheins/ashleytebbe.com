@@ -15,7 +15,6 @@ get_header(); ?>
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 		<?php if (have_posts()) : while(have_posts()) : the_post();?>
-
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			    <header class="piece-header">
 				    <div class="centered">
@@ -24,14 +23,16 @@ get_header(); ?>
 				        <?php the_content(); ?>
 				    </div>
 			    </header><!-- .entry-header -->
-			    <?php the_post_thumbnail('large', array('class'=>'featured')) ?>
+			    <?php $image1 = get_field('image_1'); 
+			    ?>
+			    <img src="<?php echo $image1['url']; ?>" class="main-image">
 
 			    <footer class="entry-footer">
-			    <?php for ($i = 1; $i < 11; $i++) {
+			    <?php for ($i = 2; $i < 12; $i++) {
 			    	$image = get_field('image_' . $i);
 			    	if ($image) { ?> 
-			    		<img src="<?php echo $image['url']; ?>" class="portfolio-asset">
-			    <?php } ?>
+			    		<img src="<?php echo $image['url']; ?>" class="portfolio-asset image_<?php echo $i?>">
+			    	<?php } ?>
 			   <?php  } ?>
 			    
 				

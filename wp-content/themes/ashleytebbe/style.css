@@ -25,7 +25,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 .secondaryFont, .page-title, .piece-subtitle {
   font-family: Bodoni, serif;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
@@ -563,8 +563,9 @@ html[xmlns] .clearfix {
 .page-title {
   letter-spacing: .2em;
   font-weight: 300;
-  margin: -33px 0 0;
-  font-size: 4.5em;
+  margin: 0 0 40px 0;
+  font-size: 3.5em;
+  line-height: .7em;
 }
 
 #work {
@@ -578,6 +579,7 @@ html[xmlns] .clearfix {
   clear: none;
   width: 48%;
   margin: 0 3% 20px 0;
+  text-align: center;
 }
 #work .piece-header:nth-child(odd) {
   margin-right: 0;
@@ -611,7 +613,7 @@ html[xmlns] .clearfix {
 
 .piece-subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .single-portfolio .featured {
@@ -671,10 +673,15 @@ html[xmlns] .clearfix {
   line-height: 40px;
 }
 
+.piece-header {
+  text-align: center;
+}
+
 .single-portfolio .piece-header {
   float: none;
   margin: 0 auto;
   display: block;
+  text-align: center;
 }
 
 #contactme .right {
@@ -700,6 +707,7 @@ html[xmlns] .clearfix {
   #page > header {
     clear: both;
     height: 125px;
+    position: static;
   }
   #page > header .header {
     background-color: transparent;
@@ -776,11 +784,11 @@ html[xmlns] .clearfix {
   #work .piece-header {
     float: left;
     clear: none;
-    margin-right: 3%;
+    margin-right: 5%;
     width: 30%;
   }
   #work .piece-header:nth-child(odd) {
-    margin-right: 3%;
+    margin-right: 5%;
   }
   #work .piece-header:nth-child(3n+4) {
     margin-right: 0;
@@ -789,8 +797,9 @@ html[xmlns] .clearfix {
   .type-portfolio .piece-header {
     width: 41%;
     float: left;
+    text-align: center;
   }
-  .type-portfolio .featured {
+  .type-portfolio .main-image {
     float: right;
     width: 55%;
     height: auto;
@@ -800,14 +809,16 @@ html[xmlns] .clearfix {
     width: 49%;
     float: right;
     margin: 10px 0;
+    margin-top: 10%;
   }
+  SH
   .single-portfolio .portfolio-asset:nth-child(odd) {
     float: left;
   }
 
   .page-title {
-    font-size: 10em;
-    margin-top: -76px;
+    font-size: 8em;
+    margin-bottom: 60px;
   }
 
   .thumbnail {
@@ -824,18 +835,20 @@ html[xmlns] .clearfix {
     display: block;
   }
 }
-.block .centered {
-  display: inline-block;
-  vertical-align: middle;
+.block {
+  text-align: center;
 }
-
-.block:before {
+.block .block:before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
   margin-right: -0.25em;
-  /* Adjusts for spacing */
+}
+.block .centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
 }
 
 @media screen and (min-width: 850px) and (max-width: 1080px) {

@@ -7,26 +7,41 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php 
+		<?php
+		$portfolio_piece = $_GET['work'];
 		$args1 = array(
-				'post_type'=>'portfolio',
-				'posts_per_page'=>'1'
-			);
+			'post_type'=>'portfolio'
+			// , 'posts_per_page'=>'1'
+		);
 		$query1 = new WP_Query( $args1 );
 			if ($query1->have_posts()) : while($query1->have_posts()) : $query1->the_post();?>
-			<div class="container clearfix">
-		      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				    <header class="piece-header block">
-					    <div class="centered">
-					        <?php the_title( '<h3 class="piece-title">', '</h3>' ); ?>
-					        <h5 class="piece-subtitle"><?php the_field('portfolio_piece_type')?></h5>
-					        <?php the_content(); ?>
-				        </div>
-				    </header><!-- .entry-header -->
-				  
-				    
-			   </article>
-			  </div>
+			
+				<?php if ($post->post_name == $portfolio_piece) { ?>
+				<div class="container clearfix">
+			      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					    <header class="piece-header">
+					    	<div class="block">
+							    <div class="centered">
+							        <?php the_title( '<h3 class="piece-title">', '</h3>' ); ?>
+							        <h5 class="piece-subtitle"><?php the_field('portfolio_piece_type')?></h5>
+							        <?php the_content(); ?>
+						        </div>
+						     </div>
+					    </header><!-- .entry-header -->
+					    <?php $image1 = get_field('image_1'); ?>
+				    	<img src="<?php echo $image1['url']; ?>" class="main-image">
+				    	<footer class="entry-footer">
+						    <?php for ($i = 2; $i < 12; $i++) {
+						    	$image = get_field('image_' . $i);
+						    	if ($image) { ?> 
+						    		<img src="<?php echo $image['url']; ?>" class="portfolio-asset image_<?php echo $i?>">
+						    	<?php } ?>
+						   <?php  } ?>
+			    		</footer><!-- .entry-footer -->
+				   </article>
+				 </div>
+				 <?php } ?>
+
 		    <?php endwhile; endif ?>
 		<?php 
 			$args = array(

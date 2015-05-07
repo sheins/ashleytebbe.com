@@ -34,7 +34,7 @@ $backgroundGray: #EDEDEE;
 
 .secondaryFont {
   font-family: $secondaryFont;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 
@@ -615,8 +615,9 @@ html[xmlns] .clearfix {
   @extend .secondaryFont;
   letter-spacing: .2em;
   font-weight: 300;
-  margin: -33px 0 0;
-  font-size: 4.5em;
+  margin: 0 0 40px 0;
+  font-size: 3.5em;
+  line-height: .7em;
 }
 
 
@@ -632,6 +633,7 @@ html[xmlns] .clearfix {
     clear: none;
     width: 48%;
     margin: 0 3% 20px 0;
+    text-align: center;
 
     &:nth-child(odd) {
         margin-right: 0;
@@ -668,7 +670,7 @@ html[xmlns] .clearfix {
 .piece-subtitle {
   @extend .secondaryFont;
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .single-portfolio {
@@ -728,10 +730,15 @@ html[xmlns] .clearfix {
   }
 }
 
+.piece-header { 
+  text-align: center;
+}
+
 .single-portfolio .piece-header {
   float: none;
   margin: 0 auto;
   display: block;
+  text-align: center;
 }
 
 #contactme {
@@ -760,14 +767,23 @@ html[xmlns] .clearfix {
 @media screen and (min-width: 850px) {
   #page {
     margin-top: 0;
-
     > header {
     clear: both;
     height: 125px;
+    // position: fixed;
+    // width: 100%;
+    // background: #fff;
+    // padding-left: 0;
+    // left: 50%;
+    // margin-left: -490px;
+    // top: 0;
+    // z-index: 100;
+    position: static;
 
     .header {
       background-color: transparent;
       position: relative;
+      // position: static;
       z-index: 0;
 
       .container {
@@ -854,11 +870,11 @@ html[xmlns] .clearfix {
   #work .piece-header {
     float: left;
     clear: none;
-    margin-right: 3%;
+    margin-right: 5%;
     width: 30%;
 
     &:nth-child(odd) {
-      margin-right: 3%;
+      margin-right: 5%;
     }
 
     &:nth-child(3n+4) {
@@ -870,9 +886,10 @@ html[xmlns] .clearfix {
     .piece-header {
       width: 41%;
       float: left;
+      text-align: center;
   }
 
-    .featured {
+    .main-image {
       float: right;
       width: 55%;
       height: auto;
@@ -884,6 +901,8 @@ html[xmlns] .clearfix {
         width: 49%;
         float: right;
         margin: 10px 0;
+        margin-top: 10%;SH
+
 
         &:nth-child(odd) {
           float: left;
@@ -892,8 +911,8 @@ html[xmlns] .clearfix {
   }
 
     .page-title {
-      font-size: 10em;
-      margin-top: -76px;
+      font-size: 8em;
+      margin-bottom: 60px;
     }
 
     .thumbnail {
@@ -914,20 +933,21 @@ html[xmlns] .clearfix {
 }
 
 .block {
-  // height: 540px;
-
-  .centered {
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
+  text-align: center;
 
 .block:before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
-  margin-right: -0.25em; /* Adjusts for spacing */
+  margin-right: -0.25em;
+}
+
+  .centered {
+     display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+  }
 }
 
 @media screen and (min-width: 850px) and (max-width: 1080px) {
