@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
     	<header id="masthead" class="site-header container clearfix" role="banner">
-            <a href="/" class="logo"><img src="<?php bloginfo('template_url'); ?>/images/logo.png"></a>
+            <img src="<?php bloginfo('template_url'); ?>/images/logo.png" class="logo">
             <div class="header">
                 <div class="container clearfix">
                     <div class="social-icons" id="social-icons">

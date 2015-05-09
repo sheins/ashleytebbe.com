@@ -523,12 +523,6 @@ html[xmlns] .clearfix {
     width: 40px;
 }
 
-.site-main {
-  .container {
-    margin-bottom: 30px;
-  }
-}
-
  #site-navigation ul {
     display: none;
     width: 100%;
@@ -565,7 +559,7 @@ html[xmlns] .clearfix {
   z-index: 100;
 }
 
-.logo img {
+.logo {
   display: block;
   margin: 0 auto;
 }
@@ -585,6 +579,7 @@ html[xmlns] .clearfix {
 
 #blog .page-title {
   text-align: right;
+  color: $backgroundGray;
 }
 
 /*Contact Page*/
@@ -599,7 +594,7 @@ html[xmlns] .clearfix {
     .piece-title {
       font-size: 1.2em;
       text-align: left;
-      width: 230px;
+      width: 68%;
     }
 
     .piece-subtitle {
@@ -617,7 +612,7 @@ html[xmlns] .clearfix {
   font-weight: 300;
   margin: 0 0 40px 0;
   font-size: 3.5em;
-  line-height: .7em;
+  line-height: .8em;
 }
 
 
@@ -632,7 +627,7 @@ html[xmlns] .clearfix {
     float: left;
     clear: none;
     width: 48%;
-    margin: 0 3% 20px 0;
+    margin: 0 3% 50px 0;
     text-align: center;
 
     &:nth-child(odd) {
@@ -664,13 +659,15 @@ html[xmlns] .clearfix {
   text-transform: uppercase;
   font-weight: 300;
   clear: both;
-  margin: 0;
+  margin: 0 auto;
+  width: 180px;
 }
 
 .piece-subtitle {
   @extend .secondaryFont;
   margin: 0;
-  font-size: 13px;
+  font-size: 10px;
+  margin-top: 5px;
 }
 
 .single-portfolio {
@@ -678,13 +675,13 @@ html[xmlns] .clearfix {
     display: block;
     margin: 10px auto;
   }
+}
 
-  .portfolio-asset {
+.portfolio-asset {
     height: auto;
     display: block;
     margin: 0 auto;
   }
-}
 
 .social-icons {
   float: right;
@@ -763,6 +760,13 @@ html[xmlns] .clearfix {
   }
 }
 
+@media screen and (max-width: 935px) {
+  .main-image {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 
 @media screen and (min-width: 850px) {
   #page {
@@ -830,7 +834,7 @@ html[xmlns] .clearfix {
           display: block;
           clear: right;
           font-family: $secondaryFont;
-          text-transform: lowercase;
+          text-transform: uppercase;
 
           li {
             display: inline-block;
@@ -898,11 +902,9 @@ html[xmlns] .clearfix {
 
   .single-portfolio {
     .portfolio-asset {
-        width: 49%;
-        float: right;
+        display: block;
+        margin: 0 auto;
         margin: 10px 0;
-        margin-top: 10%;SH
-
 
         &:nth-child(odd) {
           float: left;
@@ -930,26 +932,17 @@ html[xmlns] .clearfix {
       display: block;
     }
   }
-}
 
-.block {
+  .block {
   text-align: center;
-
-.block:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em;
+  margin-top: 30%;
 }
 
-  .centered {
-     display: inline-block;
-    vertical-align: middle;
-    width: 300px;
+  img.portfolio-asset {
+    margin: 20px auto;
+    display: block;
   }
 }
-
 @media screen and (min-width: 850px) and (max-width: 1080px) {
 
   #contactme {
@@ -965,4 +958,6 @@ html[xmlns] .clearfix {
     }
   }
 }
+
+
 
