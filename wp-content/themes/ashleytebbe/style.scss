@@ -595,6 +595,7 @@ html[xmlns] .clearfix {
       font-size: 1.2em;
       text-align: left;
       width: 68%;
+      margin: 0;
     }
 
     .piece-subtitle {
@@ -660,7 +661,7 @@ html[xmlns] .clearfix {
   font-weight: 300;
   clear: both;
   margin: 0 auto;
-  width: 180px;
+  max-width: 180px;
 }
 
 .piece-subtitle {
@@ -680,7 +681,7 @@ html[xmlns] .clearfix {
 .portfolio-asset {
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
 .social-icons {
