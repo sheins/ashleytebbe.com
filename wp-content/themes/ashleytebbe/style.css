@@ -1,8 +1,7 @@
 /*!
 Theme Name: AshleyTebbe
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Author: Sara Heins
+Author URI: http://www.saraheins.com
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -114,8 +113,11 @@ template {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-a {
+p a {
   background: transparent;
+  color: #666;
+  text-decoration: underline;
+  font-weight: normal;
 }
 
 /**
@@ -504,6 +506,9 @@ html[xmlns] .clearfix {
   font-weight: 300;
   font-size: 2em;
 }
+#site-navigation ul.open {
+  display: block;
+}
 
 .header {
   position: fixed;
@@ -563,7 +568,7 @@ html[xmlns] .clearfix {
   font-weight: 300;
   margin: 0 0 40px 0;
   font-size: 3.5em;
-  line-height: .8em;
+  line-height: .7em;
 }
 
 #work {
@@ -587,9 +592,11 @@ html[xmlns] .clearfix {
   display: block;
   text-align: center;
   margin-bottom: 10px;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
   filter: gray;
   /* IE6-9 */
-  -webkit-filter: grayscale(100%);
 }
 .thumbnail:hover, .thumbnail:active {
   filter: none;
